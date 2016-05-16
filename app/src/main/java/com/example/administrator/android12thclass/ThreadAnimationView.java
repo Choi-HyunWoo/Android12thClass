@@ -11,6 +11,7 @@ import android.widget.ImageView;
 public class ThreadAnimationView extends ImageView {
     int[] imageArray = { R.drawable.image_1, R.drawable.image_2, R.drawable.image_3, R.drawable.image_4 };
 
+    boolean running = false;
     Handler handler = new Handler();        // UI 접근은 Main Thread만 가능하므로 Handler를 이용
 
     public ThreadAnimationView(Context context) {
@@ -23,6 +24,12 @@ public class ThreadAnimationView extends ImageView {
         init(context);
     }
 
+    public void setStart () {
+        running = true;
+    }
+    public void setStop () {
+        running = false;
+    }
 
     private void init( Context context ) {
         ImageThread thread = new ImageThread();
@@ -30,7 +37,6 @@ public class ThreadAnimationView extends ImageView {
     }
 
     class ImageThread extends Thread {
-        boolean running = false;
         int index = 0;
 
 

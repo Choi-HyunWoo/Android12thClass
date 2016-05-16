@@ -16,4 +16,20 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="중지"
+        android:id="@+id/btn_stop"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="실행"
+        android:id="@+id/btn_start"
+        android:layout_above="@+id/btn_stop"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
